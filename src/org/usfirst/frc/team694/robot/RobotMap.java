@@ -14,8 +14,13 @@ package org.usfirst.frc.team694.robot;
  * floating around.
  */
 public class RobotMap {
+	//Drivetrain Constants	
 	public static final int DRIVETRAIN_LEFT_TOP_MOTOR = -1;
 	public static final int DRIVETRAIN_LEFT_BOTTOM_MOTOR = -1;
 	public static final int DRIVETRAIN_RIGHT_TOP_MOTOR = -1;
 	public static final int DRIVETRAIN_RIGHT_BOTTOM_MOTOR = -1;
+	
+	//Blender Constants
+	public static final int BLENDER_OUTER_WHEEL_MOTOR = -1;
+	public static final int BLENDER_CENTER_WHEEL_MOTOR = -1;
 }
