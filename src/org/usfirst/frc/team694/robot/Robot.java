@@ -10,6 +10,7 @@ package org.usfirst.frc.team694.robot;
 import org.usfirst.frc.team694.robot.commands.ExampleCommand;
 import org.usfirst.frc.team694.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team694.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team694.robot.subsystems.Geartrap;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -28,6 +29,7 @@ public class Robot extends TimedRobot {
 	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 	public static OI oi;
 	public static Drivetrain drivetrain;
+	public static Geartrap m_geartrap;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
