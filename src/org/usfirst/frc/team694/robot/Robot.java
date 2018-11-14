@@ -42,6 +42,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		oi = new OI();
 		winch = new Winch();
+		drivetrain = new Drivetrain();
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}

@@ -9,9 +9,6 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
-/**
- *
- */
 public class Drivetrain extends Subsystem {
 
     private WPI_TalonSRX leftTopMotor;

@@ -21,4 +21,5 @@ public class RobotMap {
 	public static final int DRIVETRAIN_RIGHT_BOTTOM_MOTOR = -1;
 
 	public static final int GEAR_TRAP_SOLENOID_PORT = -1;
+	public static final int GEARPUSHER_GEARPUSHER = -1;
 }
