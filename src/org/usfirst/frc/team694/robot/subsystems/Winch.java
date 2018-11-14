@@ -23,10 +23,10 @@ public class Winch extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void startWinchHigh() {
+  public void startWinchFast() {
   	winchMotor.set(1.0);
   }
-  public void startWinchLow() {
+  public void startWinchSlow() {
   	winchMotor.set(0.3);
   }
   public void stopWinch() {
