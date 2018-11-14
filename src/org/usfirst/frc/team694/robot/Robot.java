@@ -8,6 +8,7 @@
 package org.usfirst.frc.team694.robot;
 
 import org.usfirst.frc.team694.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team694.robot.subsystems.GearPusher;
 import org.usfirst.frc.team694.robot.subsystems.Winch;
 import org.usfirst.frc.team694.robot.subsystems.Geartrap;
 
@@ -30,6 +31,7 @@ public class Robot extends TimedRobot {
 	public static Winch winch;
 	public static Drivetrain drivetrain;
 	public static Geartrap m_geartrap;
+	public static GearPusher gearpusher;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -42,6 +44,9 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		oi = new OI();
 		winch = new Winch();
+		drivetrain = new Drivetrain();
+		m_geartrap = new Geartrap();
+		gearpusher = new GearPusher();
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}
