@@ -9,6 +9,8 @@ package org.usfirst.frc.team694.robot;
 
 import org.usfirst.frc.team694.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team694.robot.subsystems.Winch;
+import org.usfirst.frc.team694.robot.subsystems.Geartrap;
+
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -27,6 +29,7 @@ public class Robot extends TimedRobot {
 	public static OI oi;
 	public static Winch winch;
 	public static Drivetrain drivetrain;
+	public static Geartrap m_geartrap;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
