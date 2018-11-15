@@ -1,18 +1,15 @@
 package org.usfirst.frc.team694.robot.commands;
 
 import org.usfirst.frc.team694.robot.Robot;
-import org.usfirst.frc.team694.robot.subsystems.Blender;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class Spin extends Command {
-
-    private Blender blender = Robot.blender;
+public class BlenderSpinCommand extends Command {
     
-    public Spin() {
+    public BlenderSpinCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.blender);
@@ -21,12 +18,11 @@ public class Spin extends Command {
     // Called just before this Command runs the first time
 	@Override
 	protected void initialize() {
-		blender.centerMotor.set(1.0);
-		blender.wheelMotor.set(0.5);
 	}
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.blender.spin();
     }
 
     // Make this return true when this Command no longer needs to run execute()

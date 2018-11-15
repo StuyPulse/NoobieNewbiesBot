@@ -8,6 +8,7 @@
 package org.usfirst.frc.team694.robot;
 
 import org.usfirst.frc.team694.robot.commands.ExampleCommand;
+import org.usfirst.frc.team694.robot.subsystems.Blender;
 import org.usfirst.frc.team694.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team694.robot.subsystems.ExampleSubsystem;
 

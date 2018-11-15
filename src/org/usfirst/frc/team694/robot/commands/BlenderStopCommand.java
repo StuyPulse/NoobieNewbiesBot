@@ -7,17 +7,17 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Stop extends Command {
+public class BlenderStopCommand extends Command {
 
-    public Stop() {
+    public BlenderStopCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires(Robot.blender);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.blender.centerMotor.set(0);
-    	Robot.blender.wheelMotor.set(0);
+    	Robot.blender.stop();
     }
 
     // Called repeatedly when this Command is scheduled to run

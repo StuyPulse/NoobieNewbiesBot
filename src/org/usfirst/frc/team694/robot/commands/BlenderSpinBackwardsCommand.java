@@ -7,22 +7,20 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class SpinBackwards extends Command {
+public class BlenderSpinBackwardsCommand extends Command {
 
-    public SpinBackwards() {
+    public BlenderSpinBackwardsCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	
+    	requires(Robot.blender);
     }
-
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.blender.centerMotor.set(-1.0);
-    	Robot.blender.wheelMotor.set(-0.5);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.blender.spinBackwards();
     }
 
     // Make this return true when this Command no longer needs to run execute()

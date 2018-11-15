@@ -1,9 +1,6 @@
 package org.usfirst.frc.team694.robot.subsystems;
 
 import org.usfirst.frc.team694.robot.RobotMap;
-import org.usfirst.frc.team694.robot.commands.Spin;
-import org.usfirst.frc.team694.robot.commands.SpinBackwards;
-import org.usfirst.frc.team694.robot.commands.Stop;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
@@ -22,6 +19,16 @@ public class Blender extends Subsystem {
 	public void spin() {
 		centerMotor.set(1.0);
 		outerMotor.set(0.5);
+	}
+
+	public void spinBackwards() {
+		centerMotor.set(-1.0);
+		outerMotor.set(-0.5);
+	}
+
+	public void stop() {
+		centerMotor.set(0);
+		outerMotor.set(0);
 	}
 	
 	@Override
