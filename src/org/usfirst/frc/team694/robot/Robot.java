@@ -7,10 +7,11 @@
 
 package org.usfirst.frc.team694.robot;
 
-import org.usfirst.frc.team694.robot.commands.ExampleCommand;
 import org.usfirst.frc.team694.robot.subsystems.Blender;
 import org.usfirst.frc.team694.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team694.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team694.robot.subsystems.GearPusher;
+import org.usfirst.frc.team694.robot.subsystems.Geartrap;
+import org.usfirst.frc.team694.robot.subsystems.Winch;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -26,11 +27,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * project.
  */
 public class Robot extends TimedRobot {
-	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 	public static OI oi;
+	public static Winch winch;
 	public static Drivetrain drivetrain;
 	public static Blender blender;
-	
+	public static Geartrap m_geartrap;
+	public static GearPusher gearpusher;
+
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -41,9 +44,11 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+		winch = new Winch();
 		drivetrain = new Drivetrain();
 		blender = new Blender();
-		m_chooser.addDefault("Default Auto", new ExampleCommand());
+		m_geartrap = new Geartrap();
+		gearpusher = new GearPusher();
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}

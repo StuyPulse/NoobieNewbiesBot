@@ -7,21 +7,19 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DrivetrainDriveCommand extends Command {
+public class GearTrapTrapCommand extends Command {
 
-    public DrivetrainDriveCommand() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.drivetrain);
+    public GearTrapTrapCommand() {
+        requires(Robot.m_geartrap);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.m_geartrap.trap();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.tankDrive(Robot.oi.driverGamepad.getLeftY(), Robot.oi.driverGamepad.getRightY());
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -34,7 +32,7 @@ public class DrivetrainDriveCommand extends Command {
     }
 
     // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
+    // subsystems is scheduled twzQZSASWSZ	`WS1Zo run
     protected void interrupted() {
     }
 }

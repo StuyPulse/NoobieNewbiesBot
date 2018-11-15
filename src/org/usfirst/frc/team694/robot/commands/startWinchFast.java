@@ -7,21 +7,18 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DrivetrainDriveCommand extends Command {
+public class startWinchFast extends Command {
 
-    public DrivetrainDriveCommand() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.drivetrain);
+    public startWinchFast() {
+    	requires(Robot.winch);
     }
-
     // Called just before this Command runs the first time
     protected void initialize() {
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.tankDrive(Robot.oi.driverGamepad.getLeftY(), Robot.oi.driverGamepad.getRightY());
+    	Robot.winch.startWinchFast();
     }
 
     // Make this return true when this Command no longer needs to run execute()
