@@ -21,10 +21,10 @@ public class OI {
 	public Gamepad operatorGamepad;
 	
 	public OI() {
-		driverGamepad = new Gamepad(0, GamepadSwitchMode.SWITCH_X);
-		operatorGamepad = new Gamepad(1, GamepadSwitchMode.SWITCH_X);
-		
 		operatorGamepad.getRightButton().whenPressed(new GearTrapReleaseCommand());
+		operatorGamepad.getLeftBumper().whileHeld(new startWinchFast());
+		operatorGamepad.getLeftBumper().whenReleased(new stopWinch());
+		operatorGamepad.getTopButton().whenPressed(new ScoreGearCommand());
 	}
 	
 }
