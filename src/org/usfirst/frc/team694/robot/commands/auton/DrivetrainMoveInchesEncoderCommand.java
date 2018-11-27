@@ -2,6 +2,8 @@ package org.usfirst.frc.team694.robot.commands.auton;
 
 import org.usfirst.frc.team694.robot.Robot;
 
+import edu.wpi.first.wpilibj.command.Command;
+
 
 public class DrivetrainMoveInchesEncoderCommand extends Command {
 
@@ -24,6 +26,7 @@ public class DrivetrainMoveInchesEncoderCommand extends Command {
 
     protected boolean isFinished() {
         if(Robot.drivetrain.getEncoderDistance() == targetDistance) return true;
+        else return false;
     }
 
 }

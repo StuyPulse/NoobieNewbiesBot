@@ -11,6 +11,7 @@ import org.usfirst.frc.team694.robot.subsystems.Blender;
 import org.usfirst.frc.team694.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team694.robot.subsystems.GearPusher;
 import org.usfirst.frc.team694.robot.subsystems.Geartrap;
+import org.usfirst.frc.team694.robot.subsystems.Shooter;
 import org.usfirst.frc.team694.robot.subsystems.Winch;
 
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -33,6 +34,7 @@ public class Robot extends TimedRobot {
 	public static Blender blender;
 	public static Geartrap m_geartrap;
 	public static GearPusher gearpusher;
+	public static Shooter shooter;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -49,6 +51,7 @@ public class Robot extends TimedRobot {
 		blender = new Blender();
 		m_geartrap = new Geartrap();
 		gearpusher = new GearPusher();
+		shooter = new Shooter();
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}
