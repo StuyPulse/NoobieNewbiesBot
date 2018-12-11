@@ -44,10 +44,6 @@ public class Drivetrain extends Subsystem {
     public double getRightSpeed() {
     	return rightTopMotor.get();
     }
-
-    public double getEncoderDistance() {
-        return (leftBottomMotor.getSelectedSensorPosition(0) + rightBottomMotor.getSelectedSensorPosition(0)) / 2;
-    }
     
     public double getSpeed() {
     	return Math.max(Math.abs(getLeftSpeed()), Math.abs(getRightSpeed()));
