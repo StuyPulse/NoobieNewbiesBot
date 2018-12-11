@@ -8,6 +8,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 public class Drivetrain extends Subsystem {
 
@@ -21,6 +22,8 @@ public class Drivetrain extends Subsystem {
     
     private DifferentialDrive differentialDrive;
 
+    private DigitalInput limitSwitch;
+
     public Drivetrain() {
     	leftTopMotor = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_TOP_MOTOR);
     	rightTopMotor = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_TOP_MOTOR);
@@ -31,6 +34,8 @@ public class Drivetrain extends Subsystem {
     	rightMotors = new SpeedControllerGroup(rightTopMotor, rightBottomMotor);
     	
     	differentialDrive = new DifferentialDrive(leftMotors, rightMotors);
+
+	limitSwitch = new DigitalInput(RobotMap.LIMIT_SWITCH);
     }
     
     public void initDefaultCommand() {
@@ -53,6 +58,8 @@ public class Drivetrain extends Subsystem {
     	differentialDrive.tankDrive(leftspeed, rightspeed);
     }
     
-    
+    public boolean isPressed() {
+	return limitSwitch.get();
+    }
 }
 

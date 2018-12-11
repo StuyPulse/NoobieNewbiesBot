@@ -36,6 +36,9 @@ public class Robot extends TimedRobot {
 	public static GearPusher gearpusher;
 	public static Shooter shooter;
 
+    public static IRSensor irsensor;
+    public static LineSensor linesensor;
+
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -43,6 +46,7 @@ public class Robot extends TimedRobot {
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
+
 	@Override
 	public void robotInit() {
 		oi = new OI();
@@ -52,9 +56,23 @@ public class Robot extends TimedRobot {
 		m_geartrap = new Geartrap();
 		gearpusher = new GearPusher();
 		shooter = new Shooter();
+
+		irsensor = new IRSensor();
+		linesensor = new LineSensor():
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}
+
+    @Override
+    public void robotPeriodic() {
+	updateSmartDashboard();
+    }
+
+    private void updateSmartDashboard() {
+	SmartDashboard.putBoolean(drivetrain.isPressed());
+	SmartDashboard.putNumber(irsensor.getValue());
+	SmartDashboard.putNumber(linesensor.getValue());
+    }
 
 	/**
 	 * This function is called once each time the robot enters Disabled mode.

@@ -33,4 +33,8 @@ public class RobotMap {
 	
 	//Gear pusher constants
 	public static final int GEARPUSHER_GEARPUSHER = 3;
+
+    public static final int LIMIT_SWITCH = -1;
+    public static final int IR_SENSOR_PORT = -1;
+    public static final int LINE_SENSOR_PORT = -1;
 }
