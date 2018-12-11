@@ -29,10 +29,12 @@ public class Shooter extends Subsystem {
     		motorX.set(speed);
     		motorY.set(speed);
     }
+    
     public void brake() {
     		motorX.set(0.0);
     		motorY.set(0.0);
     }
+    
     public double getSpeed () {
     		return Math.max(motorX.get() , motorY.get());
     }

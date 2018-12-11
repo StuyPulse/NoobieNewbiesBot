@@ -29,8 +29,8 @@ public class RobotMap {
 	public static final int BLENDER_CENTER_WHEEL_MOTOR = -1;
 
 	//Gear trap constants
-	public static final int GEAR_TRAP_SOLENOID_PORT = -1;
+	public static final int GEAR_TRAP_SOLENOID_PORT = 2;
 	
 	//Gear pusher constants
-	public static final int GEARPUSHER_GEARPUSHER = -1;
+	public static final int GEARPUSHER_GEARPUSHER = 3;
 }

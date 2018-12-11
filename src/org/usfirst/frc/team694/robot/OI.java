@@ -8,8 +8,12 @@
 package org.usfirst.frc.team694.robot;
 
 import org.usfirst.frc.team694.robot.commands.GearTrapReleaseCommand;
+import org.usfirst.frc.team694.robot.commands.ScoreGearCommand;
+import org.usfirst.frc.team694.robot.commands.ShooterBrakeCommand;
+import org.usfirst.frc.team694.robot.commands.ShooterShootCommand;
+import org.usfirst.frc.team694.robot.commands.startWinchFast;
+import org.usfirst.frc.team694.robot.commands.stopWinch;
 import org.usfirst.frc.team694.util.Gamepad;
-import org.usfirst.frc.team694.util.Gamepad.GamepadSwitchMode;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -21,10 +25,18 @@ public class OI {
 	public Gamepad operatorGamepad;
 	
 	public OI() {
+		driverGamepad = new Gamepad(0, Gamepad.GamepadSwitchMode.SWITCH_X);
+		operatorGamepad = new Gamepad(1, Gamepad.GamepadSwitchMode.SWITCH_X);
+		
 		operatorGamepad.getRightButton().whenPressed(new GearTrapReleaseCommand());
+		operatorGamepad.getTopButton().whenPressed(new ScoreGearCommand());
+		
+		operatorGamepad.getDPadDown().whenPressed(new ShooterBrakeCommand());
+		operatorGamepad.getDPadLeft().whileHeld(new ShooterShootCommand());
+		
 		operatorGamepad.getLeftBumper().whileHeld(new startWinchFast());
 		operatorGamepad.getLeftBumper().whenReleased(new stopWinch());
-		operatorGamepad.getTopButton().whenPressed(new ScoreGearCommand());
+		
 	}
 	
 }
